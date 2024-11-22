@@ -1,0 +1,156 @@
+@keyframes flip {
+    0% {
+        transform: rotateX(0deg);
+    }
+    50% {
+        transform: rotateX(-90deg);
+    }
+    100% {
+        transform: rotateX(0deg);
+    }
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #d3d3d3, #808080); /* Gradiente em tons de cinza */
+    color: #000; /* Cor do texto ajustada para preto */
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Elementos alinhados verticalmente */
+    height: 100vh;
+    padding: 20px; /* Adiciona espaçamento em dispositivos menores */
+}
+
+.logo {
+    max-width: 60%; /* Ajusta a largura da logo para telas menores */
+    margin-bottom: 30px; /* Espaço entre a logo e o conteúdo abaixo */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container {
+    max-width: 800px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: black;
+    letter-spacing: 2px; /* Espaçamento entre letras */
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: normal;
+    color: #555;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+    max-width: 700px;
+    line-height: 1.6;
+}
+
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Espaço maior entre os quadrados */
+    font-size: 2rem;
+    margin-top: 20px;
+    flex-wrap: nowrap; /* Evita quebra de linha em telas grandes */
+}
+
+.time {
+    text-align: center;
+    background: black; /* Fundo escuro dos blocos */
+    color: red; /* Texto em vermelho */
+    border-radius: 10px; /* Bordas arredondadas */
+    padding: 40px 20px; /* Espaço interno */
+    width: 150px; /* Largura padrão */
+    height: 150px; /* Altura padrão */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Sombra para profundidade */
+    display: flex;
+    flex-direction: column; /* Alinha o conteúdo verticalmente */
+    justify-content: center; /* Centraliza os números verticalmente */
+    position: relative;
+}
+
+.time span {
+    font-size: 3.5rem; /* Tamanho maior para os números */
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.time-label {
+    position: absolute; /* Coloca o rótulo fora do quadrado */
+    bottom: -30px; /* Move o rótulo abaixo do quadrado */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translateX(-50%); /* Ajusta para o centro */
+    font-size: 1rem; /* Aumenta o tamanho do texto abaixo */
+    font-weight: normal;
+    text-transform: uppercase;
+    color: #aaa; /* Cinza claro para contraste */
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .countdown {
+        flex-wrap: wrap; /* Permite quebra de linha em telas médias */
+        gap: 20px;
+    }
+
+    .time {
+        width: 150px; /* Reduz largura dos quadrados em telas médias */
+        height: 120px; /* Reduz altura dos quadrados */
+        padding: 30px 15px; /* Ajusta o espaço interno */
+    }
+
+    .time span {
+        font-size: 2.5rem; /* Reduz o tamanho dos números */
+    }
+
+    .time-label {
+        bottom: -25px; /* Ajusta o espaçamento abaixo dos quadrados */
+        font-size: 0.9rem; /* Reduz o tamanho do texto */
+    }
+
+    h1 {
+        font-size: 1.5rem; /* Ajusta o tamanho do título */
+    }
+}
+
+@media (max-width: 768px) {
+    .time {
+        width: 150px; /* Reduz ainda mais os quadrados */
+        height: 100px;
+        padding: 30px 40px;
+    }
+
+    .time span {
+        font-size: 2rem; /* Reduz tamanho dos números */
+    }
+
+    .time-label {
+        bottom: -20px;
+        font-size: 0.8rem; /* Ajusta o tamanho dos rótulos */
+    }
+
+    .countdown {
+        gap: 15px; /* Reduz o espaço entre os quadrados */
+    }
+
+    h1 {
+        font-size: 1.2rem; /* Ajusta o tamanho do título */
+    }
+
+    .logo {
+        max-width: 90%; /* Ajusta o tamanho da logo */
+    }
+}
